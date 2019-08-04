@@ -1,6 +1,8 @@
 <html>
   <header>
     <style>
+
+
 /* need flex boxes to be on one row, currently not flex-wrapping
 figured this one out... it was a ; that was causing this*/
 
@@ -24,7 +26,7 @@ figured this one out... it was a ; that was causing this*/
 
       #first-container {
         width: calc(100%/3 - 2rem);
-        margin: 2rem;
+        margin: 1rem;
         border: solid 2px black;
         display: flex;
         flex-direction: column;
@@ -33,7 +35,7 @@ figured this one out... it was a ; that was causing this*/
 
       #second-container {
         width: calc(100%/3 - 2rem);
-        margin: 2rem;
+        margin: 1rem;
         border: solid 2px black;
         display: flex;
         flex-direction: column;
@@ -42,11 +44,16 @@ figured this one out... it was a ; that was causing this*/
 
       #third-container {
         width: calc(100%/3 - 2rem);
-        margin: 2rem;
+        margin: 1rem;
         border: solid 2px black;
         display: flex;
         flex-direction: column;
         padding: 1rem;
+      }
+      li {
+        cursor: pointer;
+        padding: 1rem;
+        border: solid 1px black;
       }
 
       button {
@@ -66,22 +73,22 @@ figured this one out... it was a ; that was causing this*/
 <div id= 'lists'>
       <div id = 'first-container'>
         <button class = "disabled" disabled><</button>
-        <button>></button>
+        <button class = "right">></button>
         <h2>FIRST</h2>
         <ul>
           <li data id = "1"> Moe </li>
         </ul>
        </div>
     <div id = 'second-container'>
-        <button><</button>
-        <button>></button>
+        <button class = "left"><</button>
+        <button class = "right">></button>
       <h2>SECOND</h2>
       <ul>
         <li data id = "2"> Larry </li>
       </ul>
     </div>
        <div id = 'third-container'>
-        <button><</button>
+        <button class = "left"><</button>
         <button class = "disabled" disabled>></button>
         <h2>THIRD</h2>
         <ul>
@@ -99,10 +106,15 @@ figured this one out... it was a ; that was causing this*/
       {id: 3, name: 'curly', slot: 'third'},
       {id: 4, name: 'lucy', slot: 'third', selected: true},
     ];
+/* need to make names selectable */
 
     /* need eventlisteners
     when "<" button is clicked, move selected li left
     when ">" button is clicked, move seleced li right */
+
+    document.getElementById("left").addEventListener("click", moveLeft);
+
+    document.getElementById("right").addEventListener("click", moveRight);
 
     </script>
 
