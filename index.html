@@ -2,11 +2,8 @@
   <header>
     <style>
 
-
 /* need flex boxes to be on one row, currently not flex-wrapping
 figured this one out... it was a ; that was causing this*/
-
-
 
       #header{
         text-align: center;
@@ -112,9 +109,12 @@ figured this one out... it was a ; that was causing this*/
     when "<" button is clicked, move selected li left
     when ">" button is clicked, move seleced li right */
 
-    document.getElementById("left").addEventListener("click", moveLeft);
 
-    document.getElementById("right").addEventListener("click", moveRight);
+
+
+    document.getElementsByClassName("left").addEventListener("click", moveLeft);
+
+    document.getElementsByClassName("right").addEventListener("click", moveRight);
 
     </script>
 
