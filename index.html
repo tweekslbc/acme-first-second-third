@@ -1,14 +1,39 @@
 <html>
   <header>
+    <style>
+       #header {
+        text-align: center;
+      };
+
+      #first-container  {
+        display: flex;
+        border: bold 3px black;
+        height: 30px;
+        width: 30px;
+        background-color: aqua;
+
+      }
+
+
+      </style>
   </header>
   <body>
-    <h1> Acme First, Second, Third</h1>
+    <h1 id = 'header'> Acme First, Second, Third</h1>
     <div id= 'lists'>
-      <div id = 'first'>
+      <div id = 'first-container'>
+        <button><</button>
+        <button>></button>
+        <h1>first</h1>
       </div>
-    <div id = 'second'>
+    <div id = 'second-container'>
+        <button><</button>
+        <button>></button>
+      <h1>Second</h1>
     </div>
-    <div id = 'third'>
+    <div id = 'third-container'>
+        <button><</button>
+        <button>></button>
+      <h1>Third</h1>
     </div>
     </div>
     <script>
