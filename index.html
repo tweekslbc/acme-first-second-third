@@ -65,24 +65,24 @@
     <h1 id = 'header'> Acme First, Second, Third</h1>
 <div id= 'lists'>
       <div id = 'first-container'>
-        <button class = "disabled" disabled><</button>
-        <button class = "right">></button>
+        <button class = "disabled" disabled> < </button>
+        <button class = "right"> > </button>
         <h2>FIRST</h2>
         <ul>
           <li class = 'names'> Moe </li>
         </ul>
        </div>
     <div id = 'second-container'>
-        <button class = "left"><</button>
-        <button class = "right">></button>
+        <button class = "left"> < </button>
+        <button class = "right"> > </button>
       <h2>SECOND</h2>
       <ul>
         <li class = 'names'> Larry </li>
       </ul>
     </div>
        <div id = 'third-container'>
-        <button class = "left"><</button>
-        <button class = "disabled" disabled>></button>
+        <button class = "left"> < </button>
+        <button class = "disabled" disabled> > </button>
         <h2>THIRD</h2>
         <ul>
           <li class = 'names'> Curly </li>
@@ -100,9 +100,15 @@
       {id: 4, name: 'lucy', slot: 'third', selected: true},
     ];
 
-/* need to make names selectable */
+//query selectors allow us to target that particular item during an event
 
 const names = document.querySelectorAll('.names');
+const left = document.querySelectorAll('.left');
+const right = document.querySelectorAll('.right');
+
+
+/*changes names into an array to allow map. Then uses map to be able to selct multiple names
+if the name is already red and you click on it, it removes the red. If not it colors it.*/
 
 [...names].map((name, idx) => {
     name.addEventListener("click", (ev) => {
@@ -121,15 +127,15 @@ const names = document.querySelectorAll('.names');
     when "<" button is clicked, move selected li left
     when ">" button is clicked, move seleced li right */
 
-//     document.getElementsByClassName("left").addEventListener("click", moveLeft);
-//     function moveLeft(){
-//       //if selected person has slot of third, move to second, if already second move to first
-//     }
+ document.getElementsByClassName("left").addEventListener("click", moveLeft);
+    function moveLeft(){
+      //if selected person has slot of third, move to second, if already second move to first
+    }
 
-//     document.getElementsByClassName("right").addEventListener("click", moveRight);
-// function moveRight(){
-//   //if selected person has a slot of first, move to second, if already second, move to third
-// }
+    document.getElementsByClassName("right").addEventListener("click", moveRight);
+function moveRight(){
+  //if selected person has a slot of first, move to second, if already second, move to third
+}
     </script>
   </body>
   </html>
